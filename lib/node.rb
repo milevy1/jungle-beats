@@ -21,4 +21,12 @@ class Node
       @next_node.count_nodes(counter + 1)
     end
   end
+
+  def generate_string(string = self.data)
+    if @next_node.nil?
+      string
+    else
+      string + " " + @next_node.generate_string
+    end
+  end
 end

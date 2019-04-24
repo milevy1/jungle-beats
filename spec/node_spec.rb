@@ -52,5 +52,19 @@ RSpec.describe 'Jungle Beats Node' do
         expect(@node.count_nodes).to eq(3)
       end
     end
+
+    describe '#generate_string' do
+      it 'returns a space separated string of this node data plus all next nodes' do
+        expect(@node.generate_string).to eq("plop")
+
+        @node.add_node("deep")
+
+        expect(@node.generate_string).to eq("plop deep")
+
+        @node.add_node("doop")
+
+        expect(@node.generate_string).to eq("plop deep doop")
+      end
+    end
   end
 end
