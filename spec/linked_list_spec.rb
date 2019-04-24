@@ -66,10 +66,22 @@ RSpec.describe 'Jungle Beats Linked List' do
     end
 
     describe '#to_string' do
+      it 'returns nil if head is nil' do
+        expect(@list.to_string).to be_nil
+      end
+
       it 'generates a string of all the elements in the list, separated by spaces' do
         @list.append("doop")
 
         expect(@list.to_string).to eq("doop")
+
+        @list.append("deep")
+
+        expect(@list.to_string).to eq("doop deep")
+
+        @list.append("daap")
+
+        expect(@list.to_string).to eq("doop deep daap")
       end
     end
   end

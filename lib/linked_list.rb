@@ -23,6 +23,10 @@ class LinkedList
   end
 
   def to_string
-    @head.data
+    if @head.nil?
+      nil
+    else
+      @head.generate_string
+    end
   end
 end
