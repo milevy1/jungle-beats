@@ -20,7 +20,7 @@ RSpec.describe 'Jungle Beats Linked List' do
 
   describe 'instance methods' do
     describe '#append' do
-      it 'appends a new node to the head of an empty linked list' do
+      it 'appends a single node to the head of an empty linked list' do
         @list.append("doop")
 
         expect(@list.head).to be_an_instance_of(Node)
@@ -29,6 +29,13 @@ RSpec.describe 'Jungle Beats Linked List' do
 
       it 'returns the data argument given' do
         expect(@list.append("doop")).to eq("doop")
+      end
+
+      it 'can append multiple nodes' do
+        @list.append("doop")
+        @list.append("deep")
+
+        expect(@list.head.next_node.data).to eq("deep")
       end
     end
 
@@ -39,6 +46,10 @@ RSpec.describe 'Jungle Beats Linked List' do
         @list.append("doop")
 
         expect(@list.count).to eq(1)
+
+        @list.append("deep")
+
+        expect(@list.count).to eq(2)
       end
     end
 
