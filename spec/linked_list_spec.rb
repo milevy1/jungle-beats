@@ -86,7 +86,3 @@ RSpec.describe 'Jungle Beats Linked List' do
     end
   end
 end
-
-
-# > list.to_string
-# => "doop"
