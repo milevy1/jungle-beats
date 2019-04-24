@@ -31,11 +31,19 @@ RSpec.describe 'Jungle Beats Linked List' do
         expect(@list.append("doop")).to eq("doop")
       end
 
-      it 'can append multiple nodes' do
+      it 'can append two nodes' do
         @list.append("doop")
         @list.append("deep")
 
         expect(@list.head.next_node.data).to eq("deep")
+      end
+
+      it 'can append three nodes' do
+        @list.append("doop")
+        @list.append("deep")
+        @list.append("daap")
+
+        expect(@list.head.next_node.next_node.data).to eq("daap")
       end
     end
 
