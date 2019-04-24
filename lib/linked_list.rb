@@ -18,7 +18,7 @@ class LinkedList
     if @head.nil?
       0
     else
-      1
+      @head.count_nodes
     end
   end
 

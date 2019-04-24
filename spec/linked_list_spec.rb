@@ -58,6 +58,10 @@ RSpec.describe 'Jungle Beats Linked List' do
         @list.append("deep")
 
         expect(@list.count).to eq(2)
+
+        @list.append("daap")
+
+        expect(@list.count).to eq(3)
       end
     end
 
