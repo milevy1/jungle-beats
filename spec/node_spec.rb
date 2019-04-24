@@ -38,5 +38,19 @@ RSpec.describe 'Jungle Beats Node' do
         expect(@node.next_node.next_node.data).to eq("doop")
       end
     end
+
+    describe '#count_nodes' do
+      it 'returns the count of nodes from this node to the tail' do
+        expect(@node.count_nodes).to eq(1)
+
+        @node.add_node("deep")
+
+        expect(@node.count_nodes).to eq(2)
+
+        @node.add_node("doop")
+
+        expect(@node.count_nodes).to eq(3)
+      end
+    end
   end
 end
