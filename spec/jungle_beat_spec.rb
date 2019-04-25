@@ -41,9 +41,3 @@ RSpec.describe 'Jungle Beats class' do
     end
   end
 end
-
-
-# > jb.append("woo hoo shu")
-# => "woo hoo shu"
-# > jb.count
-# 6
