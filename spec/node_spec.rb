@@ -80,7 +80,7 @@ RSpec.describe 'Jungle Beats Node' do
         @node.append_node("deep")
         @node.append_node("doop")
 
-        expect(@node.generate_string(@node.data, 1)).to eq("plop deep")
+        expect(@node.generate_string(@node.data, 2)).to eq("plop deep")
       end
     end
 

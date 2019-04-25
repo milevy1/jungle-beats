@@ -34,7 +34,7 @@ class Node
   end
 
   def generate_string(string = self.data, element_counter = nil)
-    if @next_node.nil? || element_counter == 0
+    if @next_node.nil? || element_counter == 1
       string
     else
       element_counter -= 1 if element_counter
@@ -46,7 +46,7 @@ class Node
     if position == 0
       generate_string(self.data, element_count)
     else
-      find_nodes(position - 1, element_count)
+      @next_node.find_nodes(position - 1, element_count)
     end
   end
 end
