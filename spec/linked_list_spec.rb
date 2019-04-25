@@ -139,5 +139,18 @@ RSpec.describe 'Jungle Beats Linked List' do
         expect(@list.to_string).to eq("doop deep daap")
       end
     end
+
+    describe '#find' do
+      it 'takes two parameters, the first indicates the first position to return and the second parameter specifies how many elements to return' do
+        @list.append("deep")
+        @list.append("woo")
+        @list.append("shi")
+        @list.append("shu")
+        @list.append("blop")
+
+        expect(@list.find(2, 1)).to eq("shi")
+        expect(@list.find(1, 3)).to eq("woo shi shu")
+      end
+    end
   end
 end

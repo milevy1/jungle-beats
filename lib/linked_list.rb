@@ -27,7 +27,7 @@ class LinkedList
   def insert(position, data)
     if position >= self.count    # Append if position is list length
       append(data)
-    elsif position < 0
+    elsif position < 0           # Prepend if position is negative
       prepend(data)
     else
       @head.insert_node(position, data)
@@ -47,6 +47,14 @@ class LinkedList
       nil
     else
       @head.generate_string
+    end
+  end
+
+  def find(position, element_count)
+    if @head.nil?
+      nil
+    else
+      @head.find_nodes(position, element_count)
     end
   end
 end
