@@ -7,11 +7,11 @@ class Node
     @next_node = nil
   end
 
-  def add_node(data)
+  def append_node(data)
     if @next_node.nil?
       @next_node = Node.new(data)
     else
-      @next_node.add_node(data)
+      @next_node.append_node(data)
     end
   end
 

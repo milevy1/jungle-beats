@@ -24,16 +24,16 @@ RSpec.describe 'Jungle Beats Node' do
   end
 
   describe 'instance methods' do
-    describe '#add_node' do
+    describe '#append_node' do
       it 'adds a next_node if next_node is nil' do
-        @node.add_node("deep")
+        @node.append_node("deep")
 
         expect(@node.next_node.data).to eq("deep")
       end
 
       it 'adds a node to the end of the list if next_node is not nil' do
-        @node.add_node("deep")
-        @node.add_node("doop")
+        @node.append_node("deep")
+        @node.append_node("doop")
 
         expect(@node.next_node.next_node.data).to eq("doop")
       end
@@ -43,11 +43,11 @@ RSpec.describe 'Jungle Beats Node' do
       it 'returns the count of nodes from this node to the tail' do
         expect(@node.count_nodes).to eq(1)
 
-        @node.add_node("deep")
+        @node.append_node("deep")
 
         expect(@node.count_nodes).to eq(2)
 
-        @node.add_node("doop")
+        @node.append_node("doop")
 
         expect(@node.count_nodes).to eq(3)
       end
@@ -57,11 +57,11 @@ RSpec.describe 'Jungle Beats Node' do
       it 'returns a space separated string of this node data plus all next nodes' do
         expect(@node.generate_string).to eq("plop")
 
-        @node.add_node("deep")
+        @node.append_node("deep")
 
         expect(@node.generate_string).to eq("plop deep")
 
-        @node.add_node("doop")
+        @node.append_node("doop")
 
         expect(@node.generate_string).to eq("plop deep doop")
       end

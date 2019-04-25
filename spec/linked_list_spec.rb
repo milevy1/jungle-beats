@@ -60,6 +60,18 @@ RSpec.describe 'Jungle Beats Linked List' do
       end
     end
 
+    describe '#insert' do
+      it 'will insert one or more elements at a given position in the list' do
+        @list.append("plop")
+        @list.append("suu")
+        @list.prepend("dop")
+
+        @list.insert(1, "woo")
+
+        expect(@list.to_string).to eq("dop woo plop suu")
+      end
+    end
+
     describe '#count' do
       it 'tells us how many things are in the list' do
         expect(@list.count).to eq(0)

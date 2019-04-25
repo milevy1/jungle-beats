@@ -9,7 +9,7 @@ class LinkedList
     if @head.nil?
       @head = Node.new(data)
     else
-      @head.add_node(data)
+      @head.append_node(data)
     end
     data
   end
@@ -21,6 +21,14 @@ class LinkedList
       existing_list = @head
       @head = Node.new(data)
       @head.next_node = existing_list
+    end
+  end
+
+  def insert(position, data)
+    if position == self.count    # Append if position is list length
+      append(data)
+    else
+      @head.insert_node(position, data)
     end
   end
 
