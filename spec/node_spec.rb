@@ -95,5 +95,16 @@ RSpec.describe 'Jungle Beats Node' do
         expect(@node.find_nodes(1, 3)).to eq("woo shi shu")
       end
     end
+
+    describe '#includes?' do
+      it 'gives back true or false whether the supplied value is in the list' do
+        @node.append_node("deep")
+        @node.append_node("woo")
+        @node.append_node("shi")
+
+        expect(@node.includes?("deep")).to be_truthy
+        expect(@node.includes?("matt")).to be_falsy
+      end
+    end
   end
 end

@@ -57,4 +57,12 @@ class LinkedList
       @head.find_nodes(position, element_count)
     end
   end
+
+  def includes?(value)
+    if @head == value
+      true
+    else
+      @head.includes?(value)
+    end
+  end
 end

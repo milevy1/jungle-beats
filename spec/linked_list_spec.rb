@@ -152,5 +152,19 @@ RSpec.describe 'Jungle Beats Linked List' do
         expect(@list.find(1, 3)).to eq("woo shi shu")
       end
     end
+
+    describe '#includes?' do
+      it 'gives back true or false whether the supplied value is in the list' do
+        @list.append("deep")
+        @list.append("woo")
+        @list.append("shi")
+
+        expect(@list.includes?("deep")).to be_truthy
+        expect(@list.includes?("woo")).to be_truthy
+        expect(@list.includes?("shi")).to be_truthy
+
+        expect(@list.includes?("matt")).to be_falsy
+      end
+    end
   end
 end

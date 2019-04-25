@@ -49,4 +49,14 @@ class Node
       @next_node.find_nodes(position - 1, element_count)
     end
   end
+
+  def includes?(value)
+    if @data == value
+      true
+    elsif @next_node.nil?
+      false
+    else
+      @next_node.includes?(value)
+    end
+  end
 end
