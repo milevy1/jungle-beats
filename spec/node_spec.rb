@@ -39,6 +39,16 @@ RSpec.describe 'Jungle Beats Node' do
       end
     end
 
+    describe '#insert_node' do
+      it 'will insert one or more elements at a given position in the list' do
+        @node.append_node("suu")
+
+        @node.insert_node(1, "woo")
+
+        expect(@node.generate_string).to eq("plop woo suu")
+      end
+    end
+
     describe '#count_nodes' do
       it 'returns the count of nodes from this node to the tail' do
         expect(@node.count_nodes).to eq(1)
