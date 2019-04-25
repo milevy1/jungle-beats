@@ -14,6 +14,16 @@ class LinkedList
     data
   end
 
+  def prepend(data)
+    if @head.nil?
+      append(data)
+    else
+      existing_list = @head
+      @head = Node.new(data)
+      @head.next_node = existing_list
+    end
+  end
+
   def count
     if @head.nil?
       0
