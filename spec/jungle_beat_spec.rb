@@ -30,6 +30,15 @@ RSpec.describe 'Jungle Beats class' do
         expect(@jb.list.count).to eq(3)
       end
     end
+
+    describe '#count' do
+      it 'returns the count of the linked list' do
+        @jb.append("deep doo ditt")
+        @jb.append("woo hoo shu")
+
+        expect(@jb.count).to eq(6)
+      end
+    end
   end
 end
 

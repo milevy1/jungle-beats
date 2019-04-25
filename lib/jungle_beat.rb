@@ -6,6 +6,10 @@ class JungleBeat
   end
 
   def append(space_separated_data)
-    space_separated_data.split.each { |data| @list.append(data) }
+    space_separated_data.split.each { |data| list.append(data) }
+  end
+
+  def count
+    list.count
   end
 end
