@@ -75,6 +75,25 @@ RSpec.describe 'Jungle Beats Node' do
 
         expect(@node.generate_string).to eq("plop deep doop")
       end
+
+      it 'takes optional 2nd argument to count how far to return data' do
+        @node.append_node("deep")
+        @node.append_node("doop")
+
+        expect(@node.generate_string(@node.data, 1)).to eq("plop deep")
+      end
+    end
+
+    describe '#find_nodes' do
+      it 'takes two parameters, the first indicates the first position to return and the second parameter specifies how many elements to return' do
+        @node.append_node("woo")
+        @node.append_node("shi")
+        @node.append_node("shu")
+        @node.append_node("blop")
+
+        expect(@node.find_nodes(2, 1)).to eq("shi")
+        expect(@node.find_nodes(1, 3)).to eq("woo shi shu")
+      end
     end
   end
 end

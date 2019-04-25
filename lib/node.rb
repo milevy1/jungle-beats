@@ -33,11 +33,20 @@ class Node
     end
   end
 
-  def generate_string(string = self.data)
-    if @next_node.nil?
+  def generate_string(string = self.data, element_counter = nil)
+    if @next_node.nil? || element_counter == 0
       string
     else
-      string + " " + @next_node.generate_string
+      element_counter -= 1 if element_counter
+      string + " " + @next_node.generate_string(@next_node.data, element_counter)
+    end
+  end
+
+  def find_nodes(position, element_count)
+    if position == 0
+      generate_string(self.data, element_count)
+    else
+      find_nodes(position - 1, element_count)
     end
   end
 end
