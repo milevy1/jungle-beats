@@ -4,4 +4,8 @@ class JungleBeat
   def initialize
     @list = LinkedList.new
   end
+
+  def append(space_separated_data)
+    space_separated_data.split.each { |data| @list.append(data) }
+  end
 end

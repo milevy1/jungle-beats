@@ -18,14 +18,22 @@ RSpec.describe 'Jungle Beats class' do
       expect(@jb.list.head).to be_nil
     end
   end
+
+  describe 'instance methods' do
+    describe '#append' do
+      it 'appends space separated elements to the linked list' do
+        @jb.append("deep doo ditt")
+
+        expect(@jb.list.head.data).to eq("deep")
+        expect(@jb.list.head.next_node.data).to eq("doo")
+
+        expect(@jb.list.count).to eq(3)
+      end
+    end
+  end
 end
 
-# > jb.append("deep doo ditt")
-# => "deep doo ditt"
-# > jb.list.head.data
-# => "deep"
-# > jb.list.head.next_node.data
-# => "doo"
+
 # > jb.append("woo hoo shu")
 # => "woo hoo shu"
 # > jb.count
