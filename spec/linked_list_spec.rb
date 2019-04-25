@@ -70,6 +70,26 @@ RSpec.describe 'Jungle Beats Linked List' do
 
         expect(@list.to_string).to eq("dop woo plop suu")
       end
+
+      it 'can insert at beginning of list' do
+        @list.append("plop")
+        @list.append("suu")
+        @list.prepend("dop")
+
+        @list.insert(0, "woo")
+
+        expect(@list.to_string).to eq("woo dop plop suu")
+      end
+
+      it 'can insert at end of list' do
+        @list.append("plop")
+        @list.append("suu")
+        @list.prepend("dop")
+
+        @list.insert(4, "woo")
+
+        expect(@list.to_string).to eq("dop plop suu woo")
+      end
     end
 
     describe '#count' do

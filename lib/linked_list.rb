@@ -25,7 +25,7 @@ class LinkedList
   end
 
   def insert(position, data)
-    if position == self.count    # Append if position is list length
+    if position >= self.count    # Append if position is list length
       append(data)
     else
       @head.insert_node(position, data)
