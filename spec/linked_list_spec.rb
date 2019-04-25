@@ -166,5 +166,27 @@ RSpec.describe 'Jungle Beats Linked List' do
         expect(@list.includes?("matt")).to be_falsy
       end
     end
+
+    describe '#pop' do
+      it 'removes the last element from the list' do
+        @list.append("deep")
+        @list.append("woo")
+        @list.append("blop")
+
+        expect(@list.to_string).to eq("deep woo blop")
+
+        @list.pop
+
+        expect(@list.to_string).to eq("deep woo")
+
+        @list.pop
+
+        expect(@list.to_string).to eq("deep")
+
+        @list.pop
+
+        expect(@list.to_string).to be_nil
+      end
+    end
   end
 end

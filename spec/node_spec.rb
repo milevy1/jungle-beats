@@ -106,5 +106,22 @@ RSpec.describe 'Jungle Beats Node' do
         expect(@node.includes?("matt")).to be_falsy
       end
     end
+
+    describe '#pop' do
+      it 'removes the last element from the list' do
+        @node.append_node("deep")
+        @node.append_node("woo")
+        expect(@node.generate_string).to eq("plop deep woo")
+
+        @node.pop
+        expect(@node.generate_string).to eq("plop deep")
+
+        @node.pop
+        expect(@node.generate_string).to eq("plop")
+
+        @node.pop
+        expect(@node.generate_string).to be_nil
+      end
+    end
   end
 end

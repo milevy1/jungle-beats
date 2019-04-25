@@ -65,4 +65,12 @@ class LinkedList
       @head.includes?(value)
     end
   end
+
+  def pop
+    if @head.nil?
+      nil
+    else
+      @head.pop
+    end
+  end
 end

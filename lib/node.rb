@@ -59,4 +59,16 @@ class Node
       @next_node.includes?(value)
     end
   end
+
+  def pop
+    if @next_node.nil?
+      @data = nil
+    elsif @next_node.next_node.nil?
+      next_node_data = @next_node.data
+      @next_node = nil
+      next_node_data
+    else
+      @next_node.pop
+    end
+  end
 end
